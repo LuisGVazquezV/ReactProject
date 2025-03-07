@@ -28,17 +28,25 @@ const TaskList: React.FC<TaskListProps> = ({
           <Checkbox
             checked={task.completed}
             onChange={() => handleToggleComplete(task.id)}
-            sx={{ marginRight: 2 }}
+            sx={{ marginRight: 1 }}
           />
           <ListItemText primary={task.name} />
           <Button
             variant="outlined"
             onClick={() => handleEditTask(task.id, task.name)}
-            sx={{ marginRight: 2 }}
+            sx={{ marginLeft:2, marginRight: 2, '&:hover': {
+                  backgroundColor: '#28a745 ',
+                  borderColor: '#2C6B31',
+                }, }}
           >
             Edit
           </Button>
-          <Button variant="outlined" color="error" onClick={() => handleRemoveTask(task.id)}>
+          <Button variant="outlined" color="error" onClick={() => handleRemoveTask(task.id)} sx={{
+                '&:hover': {
+                  backgroundColor: '#c62828',
+                  borderColor: '#C62828'
+                },
+              }} >
             Remove
           </Button>
         </ListItem>

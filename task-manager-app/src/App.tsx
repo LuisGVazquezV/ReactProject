@@ -130,12 +130,12 @@ const App: React.FC = () => {
     <ThemeProvider theme={theme}>
       <CssBaseline /> {/* To apply the global styles and theme */}
       <Router>
-        <Box sx={{ flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh', padding: '20px', width: '100vw' }}>
-          <Box sx={{ padding: '20px', maxWidth: 400, margin: '0 auto' }}>
+        <Box sx={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh', padding: '20px', width: '100vw' }}>
+          <Box sx={{ padding: '20px', maxWidth: 400, margin: '0 auto', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
 
             {/* Task Manager Icon above the text */}
-            <Box sx={{ marginBottom: 2 }}>
-              <TaskAltIcon sx={{ alignItems: 'center', justifyContent: 'center', fontSize: 40, color: '#0077B6' }} />
+            <Box sx={{ marginBottom: 1 }}>
+              <TaskAltIcon sx={{ fontSize: 80, color: '#28a745' }} />
             </Box>
             <h1>Task Manager</h1>
 
@@ -161,6 +161,11 @@ const App: React.FC = () => {
               color="primary"
               onClick={editingTaskId ? handleSaveEdit : handleAddTask}
               fullWidth
+              sx={{
+                '&:hover': {
+                  backgroundColor: '#28a745 ',
+                },
+              }}
               data-testid="add-task-button"
             >
               {editingTaskId ? 'Save Edit' : 'Add Task'}
@@ -169,17 +174,32 @@ const App: React.FC = () => {
             {/* Navigation Links */}
             <Box sx={{ marginTop: 2, display: 'flex', justifyContent: 'center', gap: '10px' }}>
               <Link to="/" style={{ textDecoration: 'none' }}>
-                <Button variant="outlined" data-testid="all-tasks-link">
+                <Button variant="outlined" data-testid="all-tasks-link" sx={{
+                '&:hover': {
+                  backgroundColor: '#28a745 ',
+                  borderColor: '#2C6B31',
+                },
+              }}>
                   All Tasks
                 </Button>
               </Link>
               <Link to="/active" style={{ textDecoration: 'none' }}>
-                <Button variant="outlined" data-testid="active-tasks-link">
+                <Button variant="outlined" data-testid="active-tasks-link" sx={{
+                '&:hover': {
+                  backgroundColor: '#28a745 ',
+                  borderColor: '#2C6B31',
+                },
+              }}>
                   Active Tasks
                 </Button>
               </Link>
               <Link to="/completed" style={{ textDecoration: 'none' }}>
-                <Button variant="outlined" data-testid="completed-tasks-link">
+                <Button variant="outlined" data-testid="completed-tasks-link" sx={{
+                '&:hover': {
+                  backgroundColor: '#28a745 ',
+                  borderColor: '#2C6B31',
+                },
+              }}>
                   Completed Tasks
                 </Button>
               </Link>
