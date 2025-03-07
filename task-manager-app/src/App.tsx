@@ -79,7 +79,10 @@ const App: React.FC = () => {
 
   return (
     <Router>
-      <Box sx={{ padding: '20px', maxWidth: 400, margin: '0 auto' }}>
+      <Box sx={{flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh', padding: '20px', width: '100vw'}}>
+    
+        <Box sx={{ padding: '20px', maxWidth: 400, margin: '0 auto' }}>
+
         <h1>Task Manager</h1>
 
         {/* Task input field */}
@@ -159,6 +162,7 @@ const App: React.FC = () => {
             }
           />
         </Routes>
+      </Box>
       </Box>
     </Router>
   );
